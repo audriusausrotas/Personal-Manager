@@ -1,0 +1,48 @@
+.stat {
+  display: flex;
+  gap: 1rem;
+  background-color: $color-secondary;
+
+  &__month {
+    @include flex-col;
+    gap: 10px;
+    flex: 1;
+    text-transform: capitalize;
+
+    &--expense {
+      @include center;
+      position: relative;
+      display: flex;
+      flex: 1;
+      padding: 0.1rem;
+      border-radius: 0.3rem;
+      background-color: $color-false;
+    }
+
+    &--income {
+      @include center;
+      position: relative;
+      display: flex;
+      flex: 1;
+      padding: 0.1rem;
+      border-radius: 0.3rem;
+      background-color: $color-true;
+    }
+
+    &--text {
+      position: absolute;
+      bottom: 3rem;
+      transform: rotate(90deg);
+    }
+  }
+
+  &__month-info {
+    display: flex;
+    height: 15rem;
+    align-items: flex-end;
+  }
+
+  &__month-title {
+    align-self: center;
+  }
+}

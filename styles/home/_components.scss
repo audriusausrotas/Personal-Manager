@@ -1,0 +1,59 @@
+.input input {
+  font-size: 2rem;
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    display: none;
+    margin: 0;
+  }
+}
+
+.switch {
+  display: flex;
+  gap: 0.5rem;
+
+  &__labels {
+    font-size: 2rem;
+    text-transform: capitalize;
+
+    &-income {
+      transform: translateY(-1.5rem);
+    }
+
+    &-expense {
+      transform: translateY(1.5rem);
+    }
+  }
+
+  &__toggle {
+    @include border;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    width: 5rem;
+    height: 3rem;
+
+    &--off {
+      & > div {
+        background-color: $color-false;
+        transform: translateX(2rem);
+        transition: transform 0.3s;
+      }
+    }
+    &--on {
+      & > div {
+        background-color: $color-true;
+        transform: translateX(0rem);
+        transition: transform 0.3s;
+      }
+    }
+  }
+
+  &__toggle-button {
+    @include border;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    background-color: $color-true;
+  }
+}

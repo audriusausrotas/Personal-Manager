@@ -1,23 +1,24 @@
-import LoginMain from "../components/login/LoginMain";
+import HomeMain from "../components/home/HomeMain";
+
 import { getSession } from "next-auth/react";
 
-export default function Login() {
-  return <LoginMain />;
+export default function Home({ username }) {
+  return <HomeMain username={username} />;
 }
 
 export async function getServerSideProps(context) {
   const session = await getSession({ req: context.req });
 
-  if (session) {
+  if (!session) {
     return {
       redirect: {
-        destination: "/expense",
+        destination: "/",
         permanent: false,
       },
     };
   }
 
   return {
-    props: {},
+    props: { username: session.username },
   };
 }

@@ -1,0 +1,26 @@
+.container {
+  background-color: $color-primary;
+  padding: 2rem;
+}
+
+.navigation {
+  max-width: 120rem;
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0 auto;
+
+  & a {
+    color: white;
+    text-decoration: none;
+  }
+
+  & a:hover {
+    color: $color-true;
+  }
+
+  &__links {
+    display: flex;
+    gap: 2rem;
+  }
+}

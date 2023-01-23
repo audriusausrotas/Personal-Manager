@@ -1,0 +1,110 @@
+.login {
+  @include center;
+  display: flex;
+
+  &__box {
+    @include flex-col;
+    @include center;
+    @include border;
+    border-radius: 1rem;
+    margin-top: 10rem;
+    padding: 5rem;
+    gap: 4rem;
+    box-shadow: 0.3rem 0.3rem 1.5rem gray;
+  }
+
+  &__inputs {
+    @include flex-col;
+    gap: 2rem;
+  }
+
+  &__title {
+    text-transform: capitalize;
+  }
+
+  &__input {
+    @include flex-col;
+  }
+
+  &__label {
+    font-size: 1.5rem;
+  }
+
+  &__input-input {
+    display: flex;
+    border-bottom: 1px solid gray;
+    width: 30rem;
+    padding: 0.7rem 0;
+
+    & input {
+      border: none;
+      font-size: 1.8rem;
+      margin-left: 1rem;
+
+      &::placeholder {
+        color: rgba($color: #000, $alpha: 0.5);
+        font-size: 1.5rem;
+      }
+    }
+
+    & input:focus,
+    textarea:focus,
+    select:focus,
+    input {
+      outline: none;
+      background-color: none;
+    }
+  }
+
+  &__input-icon {
+    color: gray;
+  }
+
+  &__button {
+    width: 100%;
+    border-radius: 0.3rem;
+    border: transparent;
+    padding: 1rem;
+    background-color: rgb(200, 200, 200);
+    color: black;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: rgb(189, 189, 189);
+      cursor: pointer;
+    }
+  }
+
+  &__register {
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    & span {
+      color: blue;
+      cursor: pointer;
+    }
+  }
+
+  &__logout {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.8rem;
+
+    &:hover {
+      color: $color-true;
+      cursor: pointer;
+    }
+  }
+}
+
+// autofill background color workaround
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
