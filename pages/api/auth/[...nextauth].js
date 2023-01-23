@@ -1,4 +1,4 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { connectDatabase, getUser } from "../../../lib/db-util";
 import { verifyPassword } from "../../../lib/auth";
@@ -52,7 +52,7 @@ export const authOptions = {
       }
       return session;
     },
-    secret: "this is a gooood secret",
+    secret: process.env.AUTH_SECRET,
   },
 };
 

@@ -21,7 +21,7 @@ export default function HomeMain({ username }) {
         });
       check = false;
     }
-  }, []);
+  }, [dispatch, username]);
 
   return (
     <div className="home">

@@ -1,4 +1,4 @@
-import { connectDatabase, insertData, getUser } from "../../../lib/db-util";
+import { connectDatabase, insertData } from "../../../lib/db-util";
 import hashPassword from "../../../lib/auth";
 
 export default async function handler(req, res) {
@@ -53,11 +53,10 @@ export default async function handler(req, res) {
     };
 
     try {
-      const response = await insertData(client, "users", newUser);
+      await insertData(client, "users", newUser);
       res.status(201).json({ message: "User created" });
       client.close();
     } catch (error) {
-      console.log(error);
       res.status(500).json({ message: "Inserting data failed!" });
       return;
     }
