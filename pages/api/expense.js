@@ -36,6 +36,7 @@ export default async function handler(req, res) {
     }
   } else if (req.method === "GET") {
     let client;
+    const username = req.query.username;
 
     try {
       client = await connectDatabase();
@@ -46,7 +47,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      const result = await getData(client, "expense");
+      const result = await getData(client, "expense", username);
       client.close();
       res.status(201).json({ result: result });
     } catch (error) {

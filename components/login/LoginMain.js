@@ -100,7 +100,7 @@ export default function LoginMain() {
           {!login && (
             <LoginInput
               type="password"
-              name="Password"
+              name="Re-type Password"
               id="passwordRetype"
               placeholder="Re-type your password"
               value={passwordRetype}

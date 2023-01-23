@@ -12,11 +12,11 @@ export default function HomeMain({ username }) {
 
   useEffect(() => {
     if (check) {
-      fetch("/api/expense")
+      fetch(`/api/expense?username=${username}`)
         .then((response) => response.json())
         .then((data) => {
           data.result.map((item) => {
-            item.creator === username && dispatch(expenseDbActions.dbAdd(item));
+            dispatch(expenseDbActions.dbAdd(item));
           });
         });
       check = false;
