@@ -5,17 +5,20 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     const { username, email, password, passwordRetype } = req.body;
 
-    if (password !== passwordRetype) {
-      res.status(409).json({ message: "passwords do not match" });
+    if (username.trim().length < 5) {
+      res.status(422).json({ message: "Username is too short", code: 1 });
       return;
-    }
-    if (
-      username.trim().length < 5 ||
-      !email.trim() ||
-      !email.includes("@") ||
-      password.trim().length < 7
-    ) {
-      res.status(422).json({ message: "invalid data" });
+    } else if (!email.trim() || !email.includes("@")) {
+      res.status(422).json({ message: "Wrong email address", code: 2 });
+      return;
+    } else if (password.trim().length < 7) {
+      res.status(422).json({ message: "Password is too short", code: 3 });
+      return;
+    } else if (passwordRetype.trim().length < 7) {
+      res.status(422).json({ message: "Passwords too short", code: 4 });
+      return;
+    } else if (password !== passwordRetype) {
+      res.status(409).json({ message: "Passwords do not match", code: 5 });
       return;
     }
 
@@ -25,7 +28,7 @@ export default async function handler(req, res) {
       client = await connectDatabase();
       console.log("Connected successfully to server");
     } catch (error) {
-      res.status(500).json({ message: "Connecting to the database failed!" });
+      res.status(500).json({ message: "Connecting to the database failed" });
       return;
     }
 
@@ -40,7 +43,7 @@ export default async function handler(req, res) {
         return;
       }
     } catch (error) {
-      res.status(404).json({ message: "error while searching for user" });
+      res.status(404).json({ message: "Error while searching for user" });
       client.close();
       return;
     }

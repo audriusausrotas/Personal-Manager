@@ -8,7 +8,13 @@ export default function LoginInput(props) {
       <label className="login__label" htmlFor={props.id}>
         {props.name}
       </label>
-      <div className="login__input-input">
+      <div
+        className="login__input-input"
+        style={{
+          borderColor: props.error ? "red" : "black",
+          borderWidth: props.error ? "2px" : "1px",
+        }}
+      >
         <div className="login__input-icon">
           {props.type === "text" && <BsPerson />}
           {props.type === "password" && <FiLock />}

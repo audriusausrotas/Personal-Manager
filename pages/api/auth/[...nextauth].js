@@ -18,7 +18,7 @@ export const authOptions = {
           client = await connectDatabase();
           console.log("Connected successfully to server");
         } catch {
-          console.log("error connecting to database");
+          console.log("Error connecting to database");
         }
 
         const user = await getUser(client, "users", credentials.username);
@@ -31,7 +31,7 @@ export const authOptions = {
           if (isValid) {
             return { username: user.username };
           } else {
-            throw new Error("passwords doesn't match");
+            throw new Error("Wrong password");
           }
         } else {
           throw new Error("User not found");
