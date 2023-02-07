@@ -73,6 +73,13 @@ export default function Filters({ username }) {
     setIsOpen((prev) => !prev);
   }
 
+  a = 5;
+  b = 6;
+
+  if (a > b) {
+    console.log("daugiau");
+  }
+
   return (
     <div className="filters">
       <div className="filters__elements">
