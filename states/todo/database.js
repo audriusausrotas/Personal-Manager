@@ -14,6 +14,13 @@ const dbSlice = createSlice({
     dbRemove(state, action) {
       state.db = state.db.filter((item) => item._id !== action.payload);
     },
+    dbUpdate(state, action) {
+      state.db.map((item) => {
+        if (item._id === action.payload.itemID) {
+          item.progress = action.payload.checked ? "finished" : "active";
+        }
+      });
+    },
   },
 });
 

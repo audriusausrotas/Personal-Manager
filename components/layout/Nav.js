@@ -12,6 +12,7 @@ export default function Nav() {
           <Link href="/todo">Todo List</Link>
           <Link href="/notes">Personal Notes</Link>
           <Link href="/password">Password Manager</Link>
+          <Link href="/converter">Youtube Downloader</Link>
           <Link href="/converter">Universal Unit Converter</Link>
           <Link href="/calculator">Calculator</Link>
         </div>

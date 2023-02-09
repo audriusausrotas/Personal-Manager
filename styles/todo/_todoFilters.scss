@@ -1,0 +1,12 @@
+.todoFilter {
+  display: flex;
+  gap: 1rem;
+
+  &__category {
+    flex: 1;
+  }
+
+  &__progress {
+    flex: 1;
+  }
+}

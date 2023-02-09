@@ -3,14 +3,17 @@ import {
   insertData,
   getData,
   deleteData,
+  updateData,
 } from "../../lib/db-util";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { task, creator } = req.body;
+    const { task, creator, category, progress } = req.body;
 
     const newData = {
       task: task,
+      category: category,
+      progress: progress,
       creator: creator,
     };
 
@@ -79,6 +82,33 @@ export default async function handler(req, res) {
       res.status(201).json({ result: result });
     } catch (error) {
       res.status(500).json({ message: "Inserting data failed!" });
+      return;
+    }
+
+    //////////////////////////////////////////////////////////////////
+    // update request
+  } else if (req.method === "PATCH") {
+    const { itemID, checked } = req.body;
+
+    let client;
+
+    try {
+      client = await connectDatabase();
+
+      console.log("Connected successfully to server");
+    } catch (error) {
+      res.status(500).json({ message: "Connecting to the database failed!" });
+      return;
+    }
+
+    const updateValue = checked ? "finished" : "active";
+    console.log(updateValue);
+    try {
+      const result = await updateData(client, "todo", itemID, updateValue);
+      client.close();
+      res.status(201).json({ result: result });
+    } catch (error) {
+      res.status(500).json({ message: "Updating data failed!" });
       return;
     }
   }

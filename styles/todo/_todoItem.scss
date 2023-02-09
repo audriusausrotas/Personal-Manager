@@ -17,11 +17,11 @@
     margin-left: 1rem;
   }
 
-  &__checkbox:checked + &__task {
-    text-decoration-line: line-through;
+  &:has(.checked) {
+    background-color: $color-true;
   }
 
-  &:has(&__checkbox:checked) {
-    background-color: $color-true;
+  &:has(.checked) &__task {
+    text-decoration-line: line-through;
   }
 }

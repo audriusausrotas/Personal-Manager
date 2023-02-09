@@ -9,4 +9,9 @@
     flex-direction: column;
     flex: 1;
   }
+
+  &__filter {
+    display: flex;
+    flex-direction: column;
+  }
 }
