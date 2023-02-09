@@ -1,4 +1,4 @@
-import TodoMain from "../components/Todo/TodoMain";
+import TodoMain from "../components/todo/TodoMain";
 import { getSession } from "next-auth/react";
 
 export default function Todo({ username }) {

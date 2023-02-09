@@ -3,7 +3,7 @@ export default function TodoItem({ item, deleteHandler, checkedHandler }) {
     <div className="todoItem">
       <input
         className={`todoItem__checkbox ${
-          item.progress === "finished" && "checked"
+          item.progress === "finished" ? "checked" : ""
         }`}
         type="checkbox"
         onChange={checkedHandler}
