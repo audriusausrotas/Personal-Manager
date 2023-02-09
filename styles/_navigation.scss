@@ -4,11 +4,12 @@
 }
 
 .navigation {
-  max-width: 120rem;
+  max-width: 140rem;
   display: flex;
   justify-content: space-between;
-
+  align-items: center;
   margin: 0 auto;
+  font-size: 2rem;
 
   & a {
     color: white;
@@ -21,6 +22,13 @@
 
   &__links {
     display: flex;
-    gap: 2rem;
+    gap: 3.5rem;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+    width: 6rem;
+    height: 2rem;
   }
 }

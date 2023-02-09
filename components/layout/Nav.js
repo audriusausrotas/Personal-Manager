@@ -18,7 +18,7 @@ export default function Nav() {
         </div>
         {status !== "authenticated" && (
           <Link href="/" className="navigation navigation__button">
-            Login / Register
+            Login
           </Link>
         )}
         {status === "authenticated" && (
