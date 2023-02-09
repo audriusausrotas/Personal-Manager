@@ -42,17 +42,15 @@ export default function Statistics() {
 
   return (
     <div className="stat">
-      {months.map((item, index) => {
-        return (
-          <Month
-            key={index}
-            name={item.name}
-            income={item.income}
-            expense={item.expense}
-            maxH={maxH}
-          />
-        );
-      })}
+      {months.map((item, index) => (
+        <Month
+          key={index}
+          name={item.name}
+          income={item.income}
+          expense={item.expense}
+          maxH={maxH}
+        />
+      ))}
     </div>
   );
 }

@@ -7,14 +7,13 @@ import {
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { price, description, date, income, creator } = req.body;
+    const { task, creator } = req.body;
+
     const newData = {
-      price,
-      description,
-      date,
-      income,
-      creator,
+      task: task,
+      creator: creator,
     };
+
     let client;
 
     try {
@@ -24,17 +23,19 @@ export default async function handler(req, res) {
       res.status(500).json({ message: "Connecting to the database failed!" });
       return;
     }
+
     try {
-      const response = await insertData(client, "expense", newData);
+      const response = await insertData(client, "todo", newData);
       client.close();
       res
         .status(201)
-        .json({ message: "Expense added", newID: response.insertedId });
+        .json({ message: "Task added", newID: response.insertedId });
     } catch (error) {
       res.status(500).json({ message: "Inserting data failed!" });
       return;
     }
-    /////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////
     // get request
   } else if (req.method === "GET") {
     let client;
@@ -49,7 +50,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      const result = await getData(client, "expense", username);
+      const result = await getData(client, "todo", username);
       client.close();
       res.status(201).json({ result: result });
     } catch (error) {
@@ -73,7 +74,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      const result = await deleteData(client, "expense", itemID);
+      const result = await deleteData(client, "todo", itemID);
       client.close();
       res.status(201).json({ result: result });
     } catch (error) {

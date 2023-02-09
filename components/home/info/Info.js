@@ -1,4 +1,5 @@
 import InfoElement from "./InfoElement";
+import DeleteButton from "../ui/deleteButton";
 import { useSelector, useDispatch } from "react-redux";
 import { expenseDbActions } from "../../../states/expense/database";
 
@@ -57,11 +58,7 @@ export default function Info() {
           >
             <InfoElement data={item} />
             <div className="info__delete" onClick={del} id={item._id}>
-              <div
-                className="info__delete--btn"
-                onClick={del}
-                id={item._id}
-              ></div>
+              <DeleteButton onClick={del} id={item._id} />
             </div>
           </div>
         );

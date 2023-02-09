@@ -1,0 +1,12 @@
+.todo {
+  @include flex-col;
+  gap: 2rem;
+  max-width: 120rem;
+  margin: 5rem auto;
+
+  & > * {
+    padding: 2rem;
+    @include border;
+    border-radius: 0.3rem;
+  }
+}

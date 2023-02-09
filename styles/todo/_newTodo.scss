@@ -1,0 +1,12 @@
+.newTodo {
+  display: flex;
+  font-size: 2rem;
+  gap: 1rem;
+  align-items: flex-end;
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}

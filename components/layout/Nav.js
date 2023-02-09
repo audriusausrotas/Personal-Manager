@@ -10,6 +10,7 @@ export default function Nav() {
         <div className="navigation navigation__links">
           <Link href="/expense">Expense Tracker</Link>
           <Link href="/todo">Todo List</Link>
+          <Link href="/notes">Personal Notes</Link>
           <Link href="/password">Password Manager</Link>
           <Link href="/converter">Universal Unit Converter</Link>
           <Link href="/calculator">Calculator</Link>

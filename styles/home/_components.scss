@@ -1,5 +1,4 @@
 .input input {
-  font-size: 2rem;
   &[type="number"]::-webkit-inner-spin-button,
   &[type="number"]::-webkit-outer-spin-button {
     display: none;
@@ -12,9 +11,6 @@
   gap: 0.5rem;
 
   &__labels {
-    font-size: 2rem;
-    text-transform: capitalize;
-
     &-income {
       transform: translateY(-1.5rem);
     }
