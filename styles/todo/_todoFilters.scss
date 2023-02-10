@@ -1,6 +1,7 @@
 .todoFilter {
   display: flex;
   gap: 1rem;
+  background-color: $color-secondary;
 
   &__category {
     flex: 1;

@@ -1,6 +1,9 @@
 .container {
-  background-color: $color-primary;
+  background: linear-gradient(to right, #cd116f5b, #08032c91);
+  border-bottom: 1px solid #cd116f;
   padding: 2rem;
+  position: sticky;
+  top: 0;
 }
 
 .navigation {
@@ -10,15 +13,6 @@
   align-items: center;
   margin: 0 auto;
   font-size: 2rem;
-
-  & a {
-    color: white;
-    text-decoration: none;
-  }
-
-  & a:hover {
-    color: $color-true;
-  }
 
   &__links {
     display: flex;

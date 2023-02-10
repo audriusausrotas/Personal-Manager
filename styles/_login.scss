@@ -10,7 +10,7 @@
     margin-top: 10rem;
     padding: 5rem;
     gap: 3rem;
-    box-shadow: 0.3rem 0.3rem 1.5rem gray;
+    background-color: $color-secondary;
   }
 
   &__inputs {
@@ -52,7 +52,7 @@
     select:focus,
     input {
       outline: none;
-      background-color: none;
+      background-color: transparent;
     }
   }
 
