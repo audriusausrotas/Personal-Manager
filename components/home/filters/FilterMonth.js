@@ -10,7 +10,7 @@ export default function FilterMonth({ isOpen }) {
   }
 
   return (
-    <div className="filters__month filters__item">
+    <div className="filters__item">
       <label htmlFor="month">Month</label>
 
       <select

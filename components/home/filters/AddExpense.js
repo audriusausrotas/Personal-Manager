@@ -7,21 +7,21 @@ export default function AddExpense(props) {
       <ExpenseInput
         type="number"
         name="price"
-        class="filters__expense-item input"
+        class="filters__item"
         value={props.price}
         onChange={props.priceHandler}
       />
       <ExpenseInput
         type="text"
         name="description"
-        class="filters__expense-item input"
+        class="filters__item"
         value={props.description}
         onChange={props.descriptionHandler}
       />
       <ExpenseInput
         type="date"
         name="date"
-        class="filters__expense-item input"
+        class="filters__item"
         value={props.date}
         onChange={props.dateHandler}
       />

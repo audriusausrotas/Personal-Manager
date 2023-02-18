@@ -10,7 +10,7 @@ export default function FilterIncome({ isOpen }) {
   }
 
   return (
-    <div className="filters__income filters__item">
+    <div className="filters__item">
       <label htmlFor="income">Income / Expense</label>
 
       <select

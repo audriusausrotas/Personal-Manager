@@ -19,59 +19,22 @@
   }
 
   &__button {
-    width: 20rem;
-    font-size: 2rem;
-    border: 1px solid black;
-    height: 4.5rem;
-    border-radius: 0.3rem;
+    @include btn;
     align-self: flex-end;
     display: flex;
-    @include center;
+    align-items: center;
     text-align: center;
 
-    &--text {
-      user-select: none;
-      padding: 1rem 2rem;
-      flex: 4;
-      &:hover {
-        background-color: $color-true;
-        cursor: pointer;
-      }
-    }
-
-    &--del {
+    &--color {
+      height: 100%;
       background-color: $color-false;
-      align-self: stretch;
+      display: flex;
+      align-items: center;
+      padding-left: 0.4rem;
+    }
+
+    &--text {
       flex: 1;
-      border-left: 1px solid black;
-      position: relative;
-      transition: all 0.3s;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
-    &--del div {
-      @include del-btn;
-
-      &::after {
-        top: 1.9rem;
-        right: 0.06rem;
-      }
-
-      &::before {
-        top: 1.9rem;
-        right: 0.076rem;
-      }
-    }
-    &--del:hover ::before {
-      transform: rotate(45deg);
-      transform-origin: center;
-    }
-    &--del:hover ::after {
-      transform: rotate(-45deg);
-      transform-origin: center;
     }
   }
 
@@ -80,13 +43,5 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-  }
-
-  &__expense-item {
-    @include flex-col;
-    flex: 0 1 25rem;
-    align-items: flex-start;
-    font-size: 2rem;
-    text-transform: capitalize;
   }
 }

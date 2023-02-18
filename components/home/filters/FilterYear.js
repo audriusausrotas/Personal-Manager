@@ -22,7 +22,7 @@ export default function FilterYear({ isOpen }) {
   }
 
   return (
-    <div className="filters__year filters__item">
+    <div className="filters__item">
       <label htmlFor="year" className="filter">
         Year
       </label>

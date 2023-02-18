@@ -10,12 +10,7 @@ label {
 }
 
 button {
-  width: 20rem;
-  height: 4.5rem;
-  font-size: 2rem;
-  border: 1px solid black;
-  border-radius: 0.3rem;
-  cursor: pointer;
+  @include btn;
 }
 
 select {
@@ -31,5 +26,80 @@ a {
 
   &:hover {
     color: $color-hover;
+  }
+}
+
+.delete-button {
+  height: 4rem;
+  width: 4rem;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &__X {
+    @include del-btn;
+    position: relative;
+    transition: all 0.3s;
+    background-color: red;
+  }
+
+  &:hover &__X::before {
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+  &:hover &__X::after {
+    transform: rotate(-45deg);
+    transform-origin: center;
+  }
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  @include border;
+  font-size: 2rem;
+  gap: 2rem;
+  padding-left: 1.5rem;
+
+  &__content {
+    flex: 1;
+  }
+
+  &__checkbox {
+    flex: 0;
+    transform: scale(1.5);
+  }
+
+  &:has(.checked) {
+    background-color: $color-true;
+  }
+
+  &:has(.checked) &__content {
+    text-decoration-line: line-through;
+  }
+
+  &__true {
+    background-color: $color-true;
+  }
+
+  &__false {
+    background-color: $color-false;
+  }
+}
+
+.lists {
+  @include flex-col;
+  gap: 1rem;
+  background-color: $color-secondary;
+
+  &__header {
+    display: flex;
+    padding: 0rem 6rem 0 1.6rem;
+    gap: 10rem;
+
+    &--content {
+      flex: 1;
+    }
   }
 }
