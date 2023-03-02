@@ -1,0 +1,41 @@
+.note-large {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+
+  &__background {
+    @include flex-col;
+    width: 100rem;
+    height: 100rem;
+    padding: 10rem;
+    margin: auto;
+    gap: 1rem;
+    background-image: url("/note1.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    background-color: transparent;
+    border-radius: 4px;
+  }
+
+  &__text {
+    background-color: transparent;
+    resize: none;
+    font-size: 2rem;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+}

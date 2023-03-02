@@ -1,0 +1,39 @@
+.new-note {
+  @include border;
+  @include center;
+  display: flex;
+  width: 20rem;
+  height: 30rem;
+  border-radius: 20px;
+  border: 2px solid #fff;
+
+  &__circle {
+    @include center;
+    display: flex;
+    width: 8rem;
+    height: 8rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+
+  &__circle:hover *,
+  &__circle:hover {
+    border-color: $color-hover;
+  }
+
+  &__plus {
+    width: 4rem;
+    height: 0.1rem;
+    border: 2px solid #fff;
+    position: relative;
+  }
+  &__plus::before {
+    content: "";
+    border: inherit;
+    position: absolute;
+    top: -2rem;
+    left: 1.5rem;
+    height: 4rem;
+    width: 0.1rem;
+  }
+}

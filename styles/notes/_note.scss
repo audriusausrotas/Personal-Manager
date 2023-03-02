@@ -1,0 +1,19 @@
+.note {
+  @include flex-col;
+  align-items: flex-end;
+  width: 30rem;
+  height: 30rem;
+  padding: 2rem;
+  overflow: hidden;
+  background-image: url("/note1.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &__title {
+    width: 25rem;
+    height: 20rem;
+    overflow: hidden;
+    font-size: 2.5rem;
+  }
+}

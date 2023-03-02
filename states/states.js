@@ -5,6 +5,7 @@ import expenseDatabase from "./expense/database";
 import expenseFilters from "./expense/filters";
 import todoDatabase from "./todo/database";
 import todoFilters from "./todo/filters";
+import notesDatabase from "./notes/database";
 
 const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ const store = configureStore({
     todoFilters: todoFilters.reducer,
     expenseDb: expenseDatabase.reducer,
     expenseFilters: expenseFilters.reducer,
+    notesDb: notesDatabase.reducer,
   },
 });
 

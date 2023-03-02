@@ -55,9 +55,7 @@ export default function ListItem({ item }) {
         {item.description ? item.description : item.task}
       </div>
       <div className=""> {item.price ? item.price + "€" : item.category} </div>
-      <DeleteButton id={item._id} onClick={deleteHandler}>
-        delete
-      </DeleteButton>
+      <DeleteButton id={item._id} onClick={deleteHandler}></DeleteButton>
     </div>
   );
 }
