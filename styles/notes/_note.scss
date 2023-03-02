@@ -16,4 +16,8 @@
     overflow: hidden;
     font-size: 2.5rem;
   }
+
+  &__title:hover {
+    cursor: pointer;
+  }
 }

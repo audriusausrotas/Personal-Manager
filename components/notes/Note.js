@@ -21,16 +21,16 @@ export default function Note({ title, id }) {
       );
   }
 
-  function enlarge(e) {
-    setItemID(e.target.id);
+  function clickHandler(e) {
+    !open && setItemID(e.target.id);
     setOpen((prev) => !prev);
   }
 
   return (
     <div className="note">
-      {open && <NoteExtended cancelHandler={enlarge} itemID={itemID} />}
+      {open && <NoteExtended cancelHandler={clickHandler} itemID={itemID} />}
       <DeleteButton id={id} onClick={deleteHandler}></DeleteButton>
-      <div className="note__title" onClick={enlarge} id={id}>
+      <div className="note__title" onClick={clickHandler} id={id}>
         {title}
       </div>
     </div>

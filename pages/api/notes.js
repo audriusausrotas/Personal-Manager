@@ -3,6 +3,7 @@ import {
   insertData,
   getData,
   deleteData,
+  updateDataMany,
 } from "../../lib/db-util";
 
 export default async function handler(req, res) {
@@ -80,6 +81,33 @@ export default async function handler(req, res) {
       res.status(201).json({ result: result });
     } catch (error) {
       res.status(500).json({ message: "Deleting data failed!" });
+      return;
+    }
+
+    //////////////////////////////////////////////////////////////////
+    // update request
+  } else if (req.method === "PATCH") {
+    const { itemID, title, text } = req.body;
+
+    let client;
+
+    try {
+      client = await connectDatabase();
+
+      console.log("Connected successfully to server");
+    } catch (error) {
+      res.status(500).json({ message: "Connecting to the database failed!" });
+      return;
+    }
+
+    const updateValue = { title: title, text: text };
+
+    try {
+      const result = await updateDataMany(client, "notes", itemID, updateValue);
+      client.close();
+      res.status(201).json({ result: result });
+    } catch (error) {
+      res.status(500).json({ message: "Updating data failed!" });
       return;
     }
   }

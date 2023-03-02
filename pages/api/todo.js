@@ -102,7 +102,6 @@ export default async function handler(req, res) {
     }
 
     const updateValue = checked ? "finished" : "active";
-    console.log(updateValue);
     try {
       const result = await updateData(client, "todo", itemID, updateValue);
       client.close();
