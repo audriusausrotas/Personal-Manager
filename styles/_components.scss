@@ -2,6 +2,7 @@ input {
   font-size: 1.8rem;
   padding: 0.5rem;
   width: 100%;
+  height: 4rem;
 }
 
 label {
@@ -11,6 +12,7 @@ label {
 
 button {
   @include btn;
+  text-transform: capitalize;
 }
 
 select {
@@ -29,6 +31,15 @@ a {
   }
 }
 
+li {
+  list-style-type: none;
+  font-size: 2rem;
+}
+
+li::first-letter {
+  text-transform: capitalize;
+}
+
 .delete-button {
   height: 4rem;
   width: 4rem;
@@ -39,6 +50,8 @@ a {
 
   &__X {
     @include del-btn;
+    user-select: none;
+    pointer-events: none;
     position: relative;
     transition: all 0.3s;
     background-color: red;
